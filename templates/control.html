@@ -11,23 +11,28 @@
 <body>
 
     <header>
-        <div>Control Panel</div>
-        <div>Current Preset: <span class="preset_name">{{ current_preset }}</span></div>
+        <div>{{ app_info.name }} Control Panel</div>
+        <div>Current Preset: <span class="preset_name">{{ preset_name }}</span></div>
     </header>
 
     <main>
             <div class="global">
                 <button hx-post="/api/control/toggle/" hx-vals='{"layer": "_dark"}' hx-swap="none" class="control" id="_dark">
-                    dark
+                    Full Darkness
                 </button>
 
                 <div class="control">
-                    <label for="brightness">Level</label>
+                    <label for="brightness">Brightness</label>
                     <input hx-post="/api/control/set/" hx-vals='js:{"brightness": document.getElementById("brightness").value}' type="range" min="0" max="100" value="100" class="slider" id="brightness">
                 </div>
 
+                <div class="control">
+                    <label for="offset">Offset</label>
+                    <input hx-post="/api/control/set/" hx-vals='js:{"offset": document.getElementById("offset").value}' type="range" min="0" max="50" value="0" class="slider" id="offset">
+                </div>
+
                 <button hx-post="/api/control/toggle/" hx-vals='{"layer": "_bright"}' hx-swap="none" class="control" id="_bright">
-                    bright
+                    Full Light
                 </button>
             </div>
 

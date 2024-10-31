@@ -9,26 +9,19 @@
 </head>
 
 <body>
+    <div class="layer black"></div>
 
-    <div class="layer white"></div>
-    
-    <div class="layer" id="section-red">
-        <img src="/static/presets/nemesis_lockdown_surface/layer_inverted_nemesis_lockdown_surface_section_red.png"/>
-    </div>
-    <div class="layer" id="section-blue">
-        <img src="/static/presets/nemesis_lockdown_surface/layer_inverted_nemesis_lockdown_surface_section_blue.png"/>
-    </div>
-    <div class="layer" id="section-yellow">
-        <img src="/static/presets/nemesis_lockdown_surface/layer_inverted_nemesis_lockdown_surface_section_yellow.png"/>
-    </div>
-    <div class="layer" id="section-elevator">
-        <img src="/static/presets/nemesis_lockdown_surface/layer_inverted_nemesis_lockdown_surface_section_elevator.png"/>
-    </div>
+    {% for layer in layers %}
+        <div class="layer" id="{{ layer.id }}">
+            <img alt="" src="/static/presets/{{ preset_id }}/{{ layer.image_file }}"/>
+        </div>
+    {% endfor %}
 
-    <div class="layer dimmer"></div>
+    <div class="layer" id="dimmer"></div>
+    <div class="layer" id="dark_bright"></div>
 
-<script src="/static/projector.js"></script>
+    <script src="/static/projector.js"></script>
+
 </body>
 
 </html>
-

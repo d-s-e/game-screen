@@ -22,9 +22,13 @@ body {
     background-color: #ffffff;
 }
 
-.dimmer {
+.black {
     background-color: #000000;
-    opacity: 0.5;
+}
+
+#dimmer {
+    background-color: #000000;
+    opacity: 0;
 }
 
 .layer img {
