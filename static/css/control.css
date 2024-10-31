@@ -1,0 +1,58 @@
+/* GameScreen Control Panel */
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #444444;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+header, footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: monospace;
+}
+
+header {
+    background-color: #222222;
+    color: #f2c823;
+    font-weight: bold;
+    padding: 1rem;
+    font-size: 1.5em;
+}
+
+footer {
+    background-color: #222222;
+    color: #888888;
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 1rem 0;
+}
+
+.preset_name {
+    color: #ff852c;
+}
+
