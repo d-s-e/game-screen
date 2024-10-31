@@ -11,13 +11,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    font-family: monospace;
 }
 
 header, footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-family: monospace;
 }
 
 header {
@@ -25,7 +25,7 @@ header {
     color: #f2c823;
     font-weight: bold;
     padding: 1rem;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 footer {
@@ -39,6 +39,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     flex: 1 0 auto;
     padding: 1rem;
 }
@@ -52,7 +53,39 @@ h2 {
     margin: 0 0 1rem 0;
 }
 
+.global, .layers {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+
 .preset_name {
     color: #ff852c;
 }
 
+.control {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #d1ba5c;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0 0.5rem 1rem 0.5rem;
+    background-color: #5e4e29;
+    color: #d1ba5c;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.control.active {
+    color: #222222;
+    background-color: #e7d681;
+    border-color: #eae0ae;
+}
+
+label, input {
+    padding: 1rem 0.5rem;
+}

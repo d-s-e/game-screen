@@ -4,28 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameScreen Control Panel</title>
-    <link rel="stylesheet" href="/static/css/control.css">
+    <title>{{ app_info.name }} Control Panel</title>
+    <link rel="stylesheet" href="/static/control.css">
 </head>
 
 <body>
 
     <header>
         <div>Control Panel</div>
-        <div>Current Preset: <span class="preset_name">Nemesis Lockdown Surface</span></div>
+        <div>Current Preset: <span class="preset_name">{{ current_preset }}</span></div>
     </header>
 
     <main>
-        
+            <div class="global">
+                <button hx-post="/api/control/toggle/" hx-vals='{"layer": "_dark"}' hx-swap="none" class="control" id="_dark">
+                    dark
+                </button>
+
+                <div class="control">
+                    <label for="brightness">Level</label>
+                    <input hx-post="/api/control/set/" hx-vals='js:{"brightness": document.getElementById("brightness").value}' type="range" min="0" max="100" value="100" class="slider" id="brightness">
+                </div>
+
+                <button hx-post="/api/control/toggle/" hx-vals='{"layer": "_bright"}' hx-swap="none" class="control" id="_bright">
+                    bright
+                </button>
+            </div>
+
+            <div class="layers">
+                {% for layer in layers %}
+                    {% if not layer.id.startswith("_") %}
+                    <button hx-post="/api/control/toggle/" hx-vals='{"layer": "{{ layer.id }}"}' hx-swap="none" class="control" id="{{ layer.id }}">
+                        {{ layer.name }}
+                    </button>
+                    {% endif %}
+                {% endfor %}
+            </div>
     </main>
 
     <footer>
         <div> </div>
-        <div>GameScreen v0.1</div>
+        <div>{{ app_info.name }} v{{ app_info.version }}</div>
     </footer>
 
-    <script src="/static/js/control.js"></script>
+    <script src="/static/vendor/htmx.min.js"></script>
+    <script src="/static/control.js"></script>
+
 </body>
 
 </html>
-
