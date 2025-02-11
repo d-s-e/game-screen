@@ -1,5 +1,7 @@
 # GameScreen
 
+**This repository has been moved to [Codeberg](https://codeberg.org/d-s-e/game-screen).**
+
 `GameScreen` is a simple Flask based application to shine some coordinated
 light onto a game board.
 
